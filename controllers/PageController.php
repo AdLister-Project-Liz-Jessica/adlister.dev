@@ -61,6 +61,7 @@ function pageController()
     }
 
     $data['main_view'] = $main_view;
+    $data['features'] = Product::features();
 
     return $data;
 }
