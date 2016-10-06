@@ -16,16 +16,19 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/adlister.login.php">Login</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/adlister.register.php">Sign Up</a>
+                    <a href="/users/signup">Sign Up</a>
                 </li>
                 <li>
-                    <a href="/ads.index.php">Browse Items</a>
+                    <a href="/users/login">Login</a>
                 </li>
                 <li>
-                    <a href="/ads.create.php">Create a Listing</a>
+                    <a href="/ads/index">Items</a>
+                </li>
+                <li>
+                    <a href="/ads/create">Sell Item</a>
                 </li>
             </ul>
         </div>

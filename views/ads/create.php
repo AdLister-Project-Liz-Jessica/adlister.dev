@@ -9,7 +9,7 @@
 
 			<h1 class="section-title">Create A New Item</h1>
 
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-6 col-md-offset-6">
 
 				<p>Please fill out the information below to create a new item to sell</p>
 
@@ -24,7 +24,7 @@
 					<div class="form-group">
     					<textarea class="form-control" id="item_description" rows="3" placeholder="Description of item"></textarea>
   					</div>
-					<div class="row">
+		<div class="row">
 						<div class="col-sm-6">
 							<button type="submit" class="btn btn-primary">Submit</button>
 						</div>
