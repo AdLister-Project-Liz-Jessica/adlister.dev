@@ -115,7 +115,8 @@ Step 5: Implement Ad creation w/ image upload.
 
 So far, we have a site that appears to work. We can browse ads and look at individual ads and users. Now, it is time to allow users to create ads so we will have more than just our seeded data.
 
-The Elbonians started to build the backend of an image uploader in the helper_functions.php file under the utils directory. Take a look and see if you can figure out how to use it. You might find the documentation on the $_FILES superglobal useful. ￼ 
+The Elbonians started to build the backend of an image uploader in the helper_functions.php file under the utils directory. Take a look and see if you can figure out how to use it. You might find the documentation on the $_FILES superglobal useful. 
+￼ 
 ##Step 6: Implement User Login. Now that we have introduced editing features, we really need to have a login system to make sure that users only have access to what they should. Here is what we need:
 
 Only authenticated users can create ads.
