@@ -12,9 +12,6 @@ $query = 'CREATE TABLE products (
     product_name VARCHAR(240) NOT NULL,
     price DECIMAL(10,2) NOT NULL,
     pictures VARCHAR(240) NOT NULL,
-    desciption VARCHAR(500) NOT NULL,
-    PRIMARY KEY(id),
-    FOREIGN KEY(user_id) REFERENCES users(id)
     description TEXT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id)
