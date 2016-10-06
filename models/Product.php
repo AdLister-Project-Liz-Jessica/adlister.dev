@@ -20,6 +20,8 @@ class Product extends Model
 
 		//save results in features var
 		$features = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		return $features;
 	}
 
 }
