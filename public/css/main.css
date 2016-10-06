@@ -48,6 +48,8 @@ body {
 
 
 }
+
+
 /*Body Styles*/
 
 .jumbotron {
@@ -110,6 +112,14 @@ h3 > a {
 
 .button-center {
     text-align: center;
+}
+/*profile styling*/
+section{
+    background: rgba(25,255,265,.2);
+    border-radius: 10px;
+    text-align: justify;
+    padding: 15px 25px;
+    margin: 50px 0;
 }
 
 /* Footer Styles */
