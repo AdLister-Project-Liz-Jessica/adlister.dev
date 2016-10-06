@@ -2,9 +2,9 @@
 //this file was missing
 require_once __DIR__ . '/Model.php';
 
-class Ad extends Model 
+class Product extends Model 
 {
-	protected static table = 'products';
+	protected static $table = 'products';
 
 	
 }
