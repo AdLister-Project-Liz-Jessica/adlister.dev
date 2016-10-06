@@ -8,12 +8,10 @@ $dbc->exec('DROP TABLE IF EXISTS users');
 $query = 'CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(240) NOT NULL,
-    email VARCHAR(240) NOT NULL,
     username VARCHAR(100) NOT NULL,
+    email VARCHAR(240) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    role_id INT NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY(role_id) REFERENCES roles(id),
     UNIQUE (username),
     UNIQUE (email)
 )';
