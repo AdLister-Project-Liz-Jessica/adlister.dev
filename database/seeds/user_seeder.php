@@ -1,6 +1,9 @@
 <?php
 
 require_once __DIR__ . '/../../models/User.php';
+
+//truncate table before seeding
+$dbc->exec('TRUNCATE TABLE users');
 //1
 $user = new User;
 $user->name = "Liz Peacock";

@@ -2,6 +2,9 @@
 
 require_once __DIR__ . '/../../models/Product.php';
 
+//truncate table before seeding
+$dbc->exec('TRUNCATE TABLE products');
+
 $product = new Product;
 $product->user_id = 2;
 $product->product_name = "silver spoon";
