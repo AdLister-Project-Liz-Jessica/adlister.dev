@@ -7,13 +7,13 @@ $dbc->exec('DROP TABLE IF EXISTS products');
 
 
 $query = 'CREATE TABLE products(
-    product_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
     product_name VARCHAR(240) NOT NULL,
     price DECIMAL(10,2) NOT NULL,
     pictures VARCHAR)(240) NOT NULL,
     desciption VARCHAR(500) NOT NULL,
-    PRIMARY KEY(ID),
+    PRIMARY KEY(id),
     FOREIGN KEY(user_id) REFERENCES users(id),
 )';
 
