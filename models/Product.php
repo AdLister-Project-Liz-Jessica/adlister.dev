@@ -6,13 +6,13 @@ class Product extends Model
 {
 	protected static $table = 'products';
 
-	protected static function features ()
+	public static function features ()
 	{
 		//connect to DB
 		self::dbconnect();
 
 		//query for prepare statement (the select will change when functionality for pic uploads is done :))
-		$query = 'SELECT product_name, description FROM' . static::$table . 'LIMIT 3';
+		$query = 'SELECT product_name, description FROM ' . static::$table . ' LIMIT 3';
 
 		//prepare and execute the query
 		$stmt = self::$dbc->prepare($query);
