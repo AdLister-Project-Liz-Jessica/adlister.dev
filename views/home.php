@@ -35,31 +35,23 @@
     </div>
 
     <!-- featured items row -->
+
        <div class="row">
+       
+       <?php foreach ($features as $feature) : ?>
            
            <div class="col-sm-4">
                
                <img class="image-responsive" src="http://placehold.it/225x225">
                
-               <h4>Item Name</h4>
+               <h4><?= $feature['product_name'] ?></h4>
 
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
+               <p class="featured"><?= $feature['description'] ?></p>
            
            </div>
+      <?php endforeach; ?>
 
-           <div class="col-sm-4">
-               
-               <img class="image-responsive" src="http://placehold.it/225x225">
-               
-               <h4>Item Name</h4>
-               
-               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-               tempor incididunt ut labore et dolore magna aliqua.</p>
-           
-           </div>
-
-           <div class="col-sm-4">
+           <!-- <div class="col-sm-4">
                
                <img class="image-responsive" src="http://placehold.it/225x225">
                
@@ -69,6 +61,17 @@
                tempor incididunt ut labore et dolore magna aliqua.</p>
            
            </div>
+
+           <div class="col-sm-4">
+               
+               <img class="image-responsive" src="http://placehold.it/225x225">
+               
+               <h4>Item Name</h4>
+               
+               <p class="featured">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+               tempor incididunt ut labore et dolore magna aliqua.</p>
+           
+           </div> -->
 
        </div>
        <!-- close featured items row -->
