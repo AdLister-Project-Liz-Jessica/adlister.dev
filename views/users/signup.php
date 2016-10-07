@@ -1,6 +1,6 @@
 <?php 
 	//if there is something in all the inputs
-	$message = "Please fill out the following so we can create your account:";
+	$message = "Please fill out the following to create your account:";
 	if(Input::get('name') && Input::get('username') && Input::get('email') && Input::get('password')){
 
 
@@ -18,7 +18,7 @@
 			
 			$newUser->save();
 
-		$message = "Signup Succesful!";
+		$message = "Sign up Succesful! Please log in.";
 
 		}else{
 		 $message = "Try Again";
