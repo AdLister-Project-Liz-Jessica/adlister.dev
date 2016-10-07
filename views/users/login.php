@@ -3,10 +3,11 @@ if(Auth::check()){
 	header("Location: /users/profile");
 	die();
 }
-
-if(Auth::attempt(Input::get('email_user'),Input::get('password'))){
-	header("Location: /users/profile");
-	die();
+if (Input::has('email_user') && Input::has('password')){
+	if(Auth::attempt(Input::get('email_user'),Input::get('password'))){
+		header("Location: /users/profile");
+		die();
+	}
 }
 ?>
 

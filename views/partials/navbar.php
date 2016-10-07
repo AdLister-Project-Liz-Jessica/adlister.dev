@@ -15,7 +15,7 @@ require_once __DIR__ . '/../../utils/Input.php';
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Kitchen Kingdom</a>
+            <a class="navbar-brand" href="/">Kitchen Kingdom</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -24,10 +24,16 @@ require_once __DIR__ . '/../../utils/Input.php';
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/users/signup">Sign Up</a>
+                    <?php if(!Auth::check()){ ?>
+                        <a href="/users/signup">Sign Up</a>
+                    <?php } ?>
                 </li>
                 <li>
-                    <a href="/users/login">Login</a>
+                    <?php if(!Auth::check()){ ?>
+                        <a href="/users/login">Login</a>
+                    <?php }else { ?>
+                        <a href="/users/logout">Logout</a>
+                    <?php } ?>
                 </li>
                 <li>
                     <a href="/ads/index">Items</a>
