@@ -1,12 +1,10 @@
 <!--Page for creating new advertisement listings-->
 <?php
 
-require __DIR__ . '/../../utils/Auth.php';
-
 // if user is logged in
-if (isset($_SESSION['LOGGED_IN_ID'])) {
+if (Auth::check()) {
 
-	$user_id = $_SESSION['LOGGED_IN_ID'];
+	$user_id = Auth::id();
 	
 	//check if all inputs are filled out
 	if (Input::has('product_name') && Input::has('price') && Input::has('description') ) {
@@ -17,6 +15,12 @@ if (isset($_SESSION['LOGGED_IN_ID'])) {
 			$product_name = Input::get('product_name');
 			$price = Input::get('price');
 			$description = Input::get('description');
+
+			$newProduct = new Product();
+			$newProduct->user_id = $user_id;
+			$newProduct->product_name = $product_name;
+			$newProduct->price = $price;
+			$newProduct->description = $description;
 		}
 	}
 }
