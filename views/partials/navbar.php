@@ -39,7 +39,9 @@ require_once __DIR__ . '/../../utils/Input.php';
                     <a href="/ads/index">Items</a>
                 </li>
                 <li>
-                    <a href="/ads/create">Sell Item</a>
+                    <?php if(Auth::check()){?>
+                        <a href="/ads/create">Sell Item</a>
+                    <?php } ?>
                 </li>
             </ul>
 
