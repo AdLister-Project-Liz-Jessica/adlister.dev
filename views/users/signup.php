@@ -6,7 +6,11 @@
 
 		if(!empty($_POST)){
 			$name = Input::get('name');
+
+			//add try catch if user tries to sign up with an already taken username
 			$username = Input::get('username');
+
+			//add try catch if user tries to sign up with an already taken email
 			$email = Input::get('email');
 			$password = Input::get('password');
 
