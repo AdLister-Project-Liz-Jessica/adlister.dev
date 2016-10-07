@@ -3,8 +3,13 @@
 require_once __DIR__ . '/../../models/Product.php';
 require __DIR__ . '/../db_connect.php';
 
+
+
 //truncate table before seeding
-$dbc->exec('DELETE FROM products');
+
+$dbc->exec('TRUNCATE TABLE products');
+	
+
 
 $product = new Product;
 $product->user_id = 2;
