@@ -31,6 +31,7 @@
                     <a href="/ads/create">Sell Item</a>
                 </li>
             </ul>
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
