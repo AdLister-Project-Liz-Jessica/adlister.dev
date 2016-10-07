@@ -12,8 +12,6 @@ if (Input::has('email_user') && Input::has('password')){
 ?>
 
 
-
-
 <div class="container">
 
 	<section id="login">

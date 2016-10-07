@@ -1,4 +1,35 @@
+<?php 
+	//if there is something in all the inputs
+	if(Input::get('name') && Input::get('username') && Input::get('email') && Input::get('password')){
 
+
+		if(!empty($_POST)){
+			$name = Input::get('name');
+			$username = Input::get('username');
+			$email = Input::get('email');
+			$password = Input::get('password');
+
+			$newUser = new User();
+			$newUser->name = $name;
+			$newUser->username = $username;
+			$newUser->email = $email;
+			$newUser->password = $password;
+			
+			$newUser->save();
+
+			// if ($newUser->save()){
+		$message = "Signup Succesful!";
+			// }else{
+			// 	return $message = "Try Again";
+			// }
+		}else{
+		 $message = "Try Again";
+		}
+		
+	}
+
+
+ ?>
 
 <div class="container">
 
@@ -25,15 +56,16 @@
 	            <?php endif; ?>
 
 				<form method="POST" action="" data-validation data-required-message="This field is required">
+				<h2> <?=  $message ?> </h2>
 
 					<div class="form-group">
 					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
 					</div>
 					<div class="form-group">
-					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
+					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
 					</div>
 					<div class="form-group">
-					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
+					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
 					</div>
 					<div class="form-group">
 					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>

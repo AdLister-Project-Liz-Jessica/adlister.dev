@@ -24,8 +24,16 @@ require_once __DIR__ . '/../../utils/Input.php';
                     <a href="/">Home</a>
                 </li>
                 <li>
+                    <a href="/ads/index">Items</a>
+                </li>
+                <li>
                     <?php if(!Auth::check()){ ?>
                         <a href="/users/signup">Sign Up</a>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php if(Auth::check()){?>
+                        <a href="/ads/create">Sell Item</a>
                     <?php } ?>
                 </li>
                 <li>
@@ -34,12 +42,6 @@ require_once __DIR__ . '/../../utils/Input.php';
                     <?php }else { ?>
                         <a href="/users/logout">Logout</a>
                     <?php } ?>
-                </li>
-                <li>
-                    <a href="/ads/index">Items</a>
-                </li>
-                <li>
-                    <a href="/ads/create">Sell Item</a>
                 </li>
             </ul>
 
