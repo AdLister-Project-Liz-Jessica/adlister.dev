@@ -42,7 +42,7 @@
 
                 <div class="col-sm-4">
 
-                    <img class="image-responsive" src="http://placehold.it/225x225">
+                    <img class="image-responsive" src="http://placehold.it/205x205">
 
                     <h4><?= $feature['product_name'] ?></h4>
 
