@@ -1,6 +1,7 @@
 <?php 
 
 require_once __DIR__ . '/../../models/Product.php';
+require __DIR__ . '/../db_connect.php';
 
 //truncate table before seeding
 $dbc->exec('TRUNCATE TABLE products');
@@ -90,7 +91,7 @@ $product->user_id = 3;
 $product->product_name = "taco truck taco holder";
 $product->price = 5.25;
 $product->pictures = 'a picture';
-$product->description = "third product";
+$product->description = "If I only had one meal for the rest of my life it would be tacos. The only bummer is that all the fillings like to fall out of the taco when it's tipped on its side. The taco truck taco holder keeps your tacos upright and all the delicious fillings intact!";
 $product->save();
 
 $product = new Product;
@@ -98,7 +99,7 @@ $product->user_id = 4;
 $product->product_name = "storm trooper metal lunchbox";
 $product->price = 19.99;
 $product->pictures = 'a picture';
-$product->description = "third product";
+$product->description = "Send your kiddo (or yourself) to lunch in style and show off your Star Wars love with this storm trooper lunchbox.";
 $product->save();
 
 $product = new Product;
@@ -106,5 +107,5 @@ $product->user_id = 5;
 $product->product_name = "donut hole coffee mug";
 $product->price = 15.05;
 $product->pictures = 'a picture';
-$product->description = "third product";
+$product->description = "This unique coffee mug has a built in slot (donut hole) for your donut. Get your coffee and your donut from the break room to the office in one hand (and without getting sticky) by popping the donut into the donut hole and going about your day!";
 $product->save();
