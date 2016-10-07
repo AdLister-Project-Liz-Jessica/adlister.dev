@@ -1,4 +1,14 @@
+<?php 
+	if(Input::has('name') && Input::has('username') && Input::has('email') && Input::has('password')){
 
+		if(!empty($_POST)){
+			save();
+		}
+		
+	}
+
+
+ ?>
 
 <div class="container">
 
@@ -30,10 +40,10 @@
 					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
 					</div>
 					<div class="form-group">
-					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
+					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
 					</div>
 					<div class="form-group">
-					    <input type="text" class="form-control" id="username" name="username" placeholder="Username" data-required>
+					    <input type="text" class="form-control" id="email" name="email" placeholder="Email" data-required>
 					</div>
 					<div class="form-group">
 					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
