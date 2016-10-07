@@ -17,29 +17,35 @@ function saveUploadedImage($input_name)
             $positionOfLastSlash = strrpos($tempFile, '/');
             $newName = substr($tempFile, $positionOfLastSlash);
             $extension = pathinfo($_FILES[$input_name]['name'], PATHINFO_EXTENSION);
+            
             // Validate Size and Extension
             if( $_FILES[$input_name]['size'] > (1024000000))
             {
                 $valid = false;
             }
+            
             // only allows certain file extensions
             if( $extension != 'jpg' && $extension != 'jpeg' && $extension != 'png' && $extension != 'gif')
             {
                 $valid  = false;
             }
+            
             // If Image file makes it to this point, send file to this directory
             if($valid)
             {
                 $image_url = '/img/uploads' . $newName . '.' . $extension;
                 move_uploaded_file($tempFile, __DIR__ .'/../public' . $image_url);
                 return $image_url;
-            }
-            else
-            {
+
+            } else {
+                
                 return null;
+
             }
         }
+
     } else {
+        
         return null;
     }
 }
