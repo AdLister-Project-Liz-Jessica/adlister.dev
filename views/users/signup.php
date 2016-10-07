@@ -1,19 +1,29 @@
 <?php 
 	//if there is something in all the inputs
 	$message = "Please fill out the following to create your account:";
+	$error = "";
 	if(Input::get('name') && Input::get('username') && Input::get('email') && Input::get('password')){
 
+		$errors = [];
 
 		if(!empty($_POST)){
+
 			$name = Input::get('name');
 
 			//add try catch if user tries to sign up with an already taken username
-			$username = Input::get('username');
-
+			try{
+				$username = Input::get('username');
+			}catch(UnexpectedValueException $e){
+				$errors["username"] = $e->getMessage();
+			}
 			//add try catch if user tries to sign up with an already taken email
-			$email = Input::get('email');
-			$password = Input::get('password');
+			try{
+				$email = Input::get('email');
+			}catch(UnexpectedValueException $e){
+				$errors["email"] = $e->getMessage();
+			}
 
+			$password = Input::get('password');
 			$newUser = new User();
 			$newUser->name = $name;
 			$newUser->username = $username;
@@ -56,6 +66,11 @@
 	                </div>
 	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
 	            <?php endif; ?>
+
+
+ 		
+ 		<?php echo $error .PHP_EOL;?>
+ 		
 
 				<form method="POST" action="" data-validation data-required-message="This field is required">
 				<h4> <?= $message ?> </h4>
