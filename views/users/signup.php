@@ -1,8 +1,29 @@
 <?php 
-	if(Input::has('name') && Input::has('username') && Input::has('email') && Input::has('password')){
+	//if there is something in all the inputs
+	if(Input::get('name') && Input::get('username') && Input::get('email') && Input::get('password')){
+
 
 		if(!empty($_POST)){
-			save();
+			$name = Input::get('name');
+			$username = Input::get('username');
+			$email = Input::get('email');
+			$password = Input::get('password');
+
+			$newUser = new User();
+			$newUser->name = $name;
+			$newUser->username = $username;
+			$newUser->email = $email;
+			$newUser->password = $password;
+			
+			$newUser->save();
+
+			// if ($newUser->save()){
+		$message = "Signup Succesful!";
+			// }else{
+			// 	return $message = "Try Again";
+			// }
+		}else{
+		 $message = "Try Again";
 		}
 		
 	}
@@ -35,6 +56,7 @@
 	            <?php endif; ?>
 
 				<form method="POST" action="" data-validation data-required-message="This field is required">
+				<h2> <?=  $message ?> </h2>
 
 					<div class="form-group">
 					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
