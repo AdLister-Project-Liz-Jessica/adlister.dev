@@ -5,7 +5,7 @@ require_once '../models/User.php';
 
 class Auth
 {
-
+	
 	// runs login attempt with parameters
 	public static function attempt($username, $password)
 	{
