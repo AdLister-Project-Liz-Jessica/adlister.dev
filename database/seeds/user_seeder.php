@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../models/User.php';
+require __DIR__ . '/../db_connect.php';
 
 //truncate table before seeding
 $dbc->exec('TRUNCATE TABLE users');
