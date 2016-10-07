@@ -1,5 +1,6 @@
 <?php 
 	//if there is something in all the inputs
+	$message = "Please fill out the following to create your account:";
 	if(Input::get('name') && Input::get('username') && Input::get('email') && Input::get('password')){
 
 
@@ -17,11 +18,8 @@
 			
 			$newUser->save();
 
-			// if ($newUser->save()){
-		$message = "Signup Succesful!";
-			// }else{
-			// 	return $message = "Try Again";
-			// }
+		$message = "Sign up Succesful! Please log in.";
+
 		}else{
 		 $message = "Try Again";
 		}
@@ -41,7 +39,7 @@
 
 			<div class="col-md-6 col-md-offset-3">
 
-				<p>Please fill out the information below so we can create your account.</p>
+				<!-- <p>Please fill out the information below so we can create your account.</p> -->
 				<?php if (isset($_SESSION['ERROR_MESSAGE'])) : ?>
 	                <div class="alert alert-danger">
 	                    <p class="error"><?= $_SESSION['ERROR_MESSAGE']; ?></p>
@@ -56,7 +54,7 @@
 	            <?php endif; ?>
 
 				<form method="POST" action="" data-validation data-required-message="This field is required">
-				<h2> <?=  $message ?> </h2>
+				<h4> <?= $message ?> </h4>
 
 					<div class="form-group">
 					    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" data-required>
