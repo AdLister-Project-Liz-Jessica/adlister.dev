@@ -1,9 +1,6 @@
 <!--partial view for navbar-->
 <!-- Navigation -->
-<?php  
-require_once __DIR__ . '/../../utils/Auth.php';
-require_once __DIR__ . '/../../utils/Input.php';
-?>
+
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -34,6 +31,11 @@ require_once __DIR__ . '/../../utils/Input.php';
                 <li>
                     <?php if(Auth::check()){?>
                         <a href="/ads/create">Sell Item</a>
+                    <?php } ?>
+                </li>
+                <li>
+                    <?php if(Auth::check()){ ?>
+                      <a href="/users/profile">Profile</a>
                     <?php } ?>
                 </li>
                 <li>
