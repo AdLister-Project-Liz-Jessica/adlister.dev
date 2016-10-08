@@ -37,6 +37,11 @@ require_once __DIR__ . '/../../utils/Input.php';
                     <?php } ?>
                 </li>
                 <li>
+                    <?php if(Auth::check()){ ?>
+                      <a href="/users/profile">Profile</a>
+                    <?php } ?>
+                </li>
+                <li>
                     <?php if(!Auth::check()){ ?>
                         <a href="/users/login">Login</a>
                     <?php }else { ?>
