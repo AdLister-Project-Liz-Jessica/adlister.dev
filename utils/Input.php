@@ -30,6 +30,17 @@ class Input
 
     }
 
+    public static function getImage($key, $default = null)
+    {
+        if (isset($_FILES[$key])) {
+            return $_FILES[$key];
+
+        } else {
+            return $default;
+        }
+        
+    }
+
 
     public static function getUsername($key, $min = 4, $max = 20){
 
