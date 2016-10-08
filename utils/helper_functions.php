@@ -7,9 +7,11 @@
 function saveUploadedImage($input_name)
 {
     $valid = true;
+
     // checks if $input_name is in the files super global
     if(isset($_FILES[$input_name]) && $_FILES[$input_name]['name'])
     {
+
         // checks if there are any errors on the upload from the submission
         if(!$_FILES[$input_name]['error'])
         {
@@ -17,17 +19,20 @@ function saveUploadedImage($input_name)
             $positionOfLastSlash = strrpos($tempFile, '/');
             $newName = substr($tempFile, $positionOfLastSlash);
             $extension = pathinfo($_FILES[$input_name]['name'], PATHINFO_EXTENSION);
+
             
             // Validate Size and Extension
             if( $_FILES[$input_name]['size'] > (1024000000))
             {
                 $valid = false;
+
             }
             
             // only allows certain file extensions
             if( $extension != 'jpg' && $extension != 'jpeg' && $extension != 'png' && $extension != 'gif')
             {
                 $valid  = false;
+
             }
             
             // If Image file makes it to this point, send file to this directory
