@@ -11,7 +11,7 @@ $query = 'CREATE TABLE products (
     user_id INT UNSIGNED NOT NULL,
     product_name VARCHAR(240) NOT NULL,
     price DECIMAL(10,2) NOT NULL,
-    pictures VARCHAR(240) NULL,
+    image_url VARCHAR(240) NULL,
     description TEXT NOT NULL,
     PRIMARY KEY (id) 
 )';
