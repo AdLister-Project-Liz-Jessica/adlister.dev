@@ -1,9 +1,6 @@
 <!--partial view for navbar-->
 <!-- Navigation -->
-<?php  
-require_once __DIR__ . '/../../utils/Auth.php';
-require_once __DIR__ . '/../../utils/Input.php';
-?>
+
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
