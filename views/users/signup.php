@@ -1,10 +1,9 @@
 <?php 
 	//if there is something in all the inputs
 	$message = "Please fill out the following to create your account:";
-	$error = "";
+	$errors = [];
 	if(Input::get('name') && Input::get('username') && Input::get('email') && Input::get('password')){
 
-		$errors = [];
 
 		if(!empty($_POST)){
 
@@ -12,27 +11,37 @@
 
 			//add try catch if user tries to sign up with an already taken username
 			try{
-				$username = Input::get('username');
+				$username = Input::getUsername('username');
 			}catch(UnexpectedValueException $e){
+				$errors["username"] = $e->getMessage();
+			}catch(LengthException $e){
 				$errors["username"] = $e->getMessage();
 			}
 			//add try catch if user tries to sign up with an already taken email
+
+
 			try{
-				$email = Input::get('email');
+				$email = Input::getEmail('email');
 			}catch(UnexpectedValueException $e){
+				$errors["email"] = $e->getMessage();
+			}catch(LengthException $e){
 				$errors["email"] = $e->getMessage();
 			}
 
 			$password = Input::get('password');
-			$newUser = new User();
-			$newUser->name = $name;
-			$newUser->username = $username;
-			$newUser->email = $email;
-			$newUser->password = $password;
 			
-			$newUser->save();
+			if(empty($errors)){
+				$newUser = new User();
+				$newUser->name = $name;
+				$newUser->username = $username;
+				$newUser->email = $email;
+				$newUser->password= $password;
+				
+				$newUser->save();
 
-		$message = "Sign up Succesful! Please log in.";
+
+				$message = "Sign up Succesful! Please log in.";
+			}
 
 		}else{
 		 $message = "Try Again";
@@ -67,10 +76,13 @@
 	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
 	            <?php endif; ?>
 
+	     <ul>
 
+	    <?php foreach ($errors as $error){ ?>
  		
- 		<?php echo $error .PHP_EOL;?>
+ 				<li><?php echo $error .PHP_EOL;} ?></li>
  		
+ 		</ul>
 
 				<form method="POST" action="" data-validation data-required-message="This field is required">
 				<h4> <?= $message ?> </h4>
