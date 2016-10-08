@@ -1,19 +1,17 @@
 <!--Page for creating new advertisement listings-->
 <?php
 
-
 // if user is logged in
 if (Auth::check()) {
 
     $user_id = Auth::id();
     
     //check if all inputs are filled out
-    if (Input::has('product_name') && Input::has('price') && Input::has('description') && Input::has('image_file')) {
+    if (Input::has('product_name') && Input::has('price') && Input::has('description')) {
         
         //validate uploaded file & save file name in variable
         $input_name = Input::getImage('image_file');
-        echo $input_name;
-        saveUploadedImage($input_name);
+        saveUploadedImage($input_name['name']);
 
         // set the info from post requests to variables
         if (! empty($_POST)) {
@@ -27,7 +25,7 @@ if (Auth::check()) {
             $newProduct->product_name = $product_name;
             $newProduct->price = $price;
             $newProduct->description = $description;
-            $newProduct->image_file = $image_url;
+            $newProduct->image_url = saveUpLoadedImage('image_file');
 
             $newProduct->save();
 
@@ -76,7 +74,7 @@ if (Auth::check()) {
 
                     <div class="form-group">
                         <label for="image">Item image</label>
-                        <input type="file" class="form-control-file" id="image_file" name="image_file" enctype="multipart/form-data" aria-describedby="fileHelp">
+                        <input type="file" class="form-control-file" id="image_file" name="image_file" enctype="multipart/form-data"  aria-describedby="fileHelp">
                         <small id="fileHelp" class="form-text text-muted">Add a picture of your Item!</small>
                     </div>
         <div class="row">
