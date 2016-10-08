@@ -1,5 +1,6 @@
 <?php
 
+$_ENV = require_once __DIR__ . '/.env.php';
 // require models
 require_once __DIR__ . '/models/User.php';
 require_once __DIR__ . '/models/Product.php';

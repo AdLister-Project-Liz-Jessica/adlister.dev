@@ -1,12 +1,22 @@
 <!--Page for user account home-->
+<?php 
+
+    if(!Auth::check()){
+        header("Location: /users/login");
+    }
+
+    $currentUser = Auth::user();
+
+
+ ?>
 <div class="container">
 	<section id="userInfo">
 		<div class="row">
 
 			<h2 class="text-center">User Info</h2>
-			<p class="text-center">Name: </p>
-			<p class="text-center">Username: </p>
-			<p class="text-center">Email:</p>
+			<p class="text-center">Name: <?php echo $currentUser->name; ?></p>
+			<p class="text-center">Username: <?php echo $currentUser->username; ?> </p>
+			<p class="text-center">Email: <?php echo $currentUser->email; ?></p>
 
 		
 				<div class="col-sm-12 text-center">
