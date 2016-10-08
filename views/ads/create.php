@@ -21,6 +21,8 @@ if (Auth::check()) {
 			$newProduct->product_name = $product_name;
 			$newProduct->price = $price;
 			$newProduct->description = $description;
+
+			$newProduct->save();
 		}
 	}
 }
