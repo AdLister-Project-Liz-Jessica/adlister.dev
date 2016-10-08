@@ -6,6 +6,7 @@ require __DIR__ . '/../db_connect.php';
 
 
 //truncate table before seeding
+
 $dbc->exec('TRUNCATE TABLE products');
 	
 
