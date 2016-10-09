@@ -83,9 +83,17 @@ h3 > a {
 }
 
 /*featured item styles*/
-.featured {
-    column-width: 150px;
+.features {
+    height: 205px;
+    width: 205px;
+}
 
+.featured {
+    text-overflow: ellipsis;
+
+    /*for text over flow to work*/
+    white-space: nowrap;
+    overflow: hidden;
 }
 /* 404 Page Styles */
 
