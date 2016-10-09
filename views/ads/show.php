@@ -17,7 +17,7 @@
 
     </div>
 
-    <div class="show col-sm-4">
+    <div class="col-sm-4">
 
         <p><span class="bold">Price:</span> $ <?= $product ['price'] ?></p>
         
@@ -25,24 +25,23 @@
 
         <p><span class="bold">Posted By:</span> <?= $products->getUserInfo()->name ?></p>
 
-    </div>
-
-<?php endforeach ?>
-
-    <div class="row">
-    
-        <div class="col-sm-6 button-center">
+        <div id="buttonHolder" class="button-center">
 
             <button class="btn">edit ad</button>
 
-        </div>
-
-        <div class="col-sm-6 button-center">
-
             <button class="btn">delete ad</button>
-
+        
         </div>
 
+    </div>
 
+<?php if (isset($_SESSION['IS_LOGGED_IN']) && $_SESSION['LOGGED_IN_ID'] === $product['user_id']) {
+    
+    $showdiv = 'buttonHolder';
+
+    echo "<script type=\"text/javascript\">document.getElementById('".$showdiv."').style.display = 'block';</script>";
+} ?>
+
+<?php endforeach ?>
 
 </div>
