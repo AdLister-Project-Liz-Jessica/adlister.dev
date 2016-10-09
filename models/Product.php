@@ -11,8 +11,8 @@ class Product extends Model
         //connect to DB
         self::dbconnect();
 
-        //query for prepare statement (the select will change when functionality for pic uploads is done :))
-        $query = 'SELECT product_name, description FROM ' . static::$table . ' LIMIT 3';
+        //query for prepare statement 
+        $query = 'SELECT product_name, image_url, description FROM ' . static::$table . ' LIMIT 3';
 
         //prepare and execute the query
         $stmt = self::$dbc->prepare($query);
@@ -23,6 +23,7 @@ class Product extends Model
 
         return $features;
     }
+
 
 }
 

@@ -10,11 +10,6 @@ Gain experience in building a well-designed, vanilla PHP site using an Model, Vi
 Learn how to use Git in a team environment.
 Test your resourcefulness in solving problems.
 Schematic Diagram of Model, View, Controller (MVC) paradigm: model view controller diagram
-
-Project Tasks Outline
-
-Clone the existing site.
-Buildout missing views.
 Design and build the database.
 Implement the site models.
 Implement add creation with image upload.
@@ -28,7 +23,11 @@ Step 1: Clone the existing site.
 It looks like the Elbonians have already set up most of the files you’ll need. Start by cloning the existing repository onto your local machine. Explore the files that are already there and look at what still needs to be completed. Some items in the file tree below are existing in the cloned repository and some can be copied from previous class exercises.
 
 adlister.dev
-├── README.md
+
+Project Tasks Outline
+
+Clone the existing site.
+Buildout missing views.
 ├── bootstrap.php
 ├── controllers
 │   └── PageController.php

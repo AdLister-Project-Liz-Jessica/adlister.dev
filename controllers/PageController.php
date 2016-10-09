@@ -28,6 +28,7 @@ function pageController()
     switch ($request) {
         case '/':
             $main_view = '../views/home.php';
+            $data['features'] = Product::features();
             break;
         case '/users/profile':
             $main_view = '../views/users/account.php';
@@ -49,6 +50,7 @@ function pageController()
             break;
         case '/ads/index':
             $main_view = '../views/ads/index.php';
+            $data['products'] = Product::all();
             break;
         case '/ads/show':
             $main_view = '../views/ads/show.php';
@@ -64,7 +66,6 @@ function pageController()
     }
 
     $data['main_view'] = $main_view;
-    $data['features'] = Product::features();
 
 
     return $data;
