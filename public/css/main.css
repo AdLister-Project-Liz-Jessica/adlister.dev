@@ -95,6 +95,13 @@ h3 > a {
     white-space: nowrap;
     overflow: hidden;
 }
+
+/* ads index page styles */
+.allProducts {
+    height: 150px;
+    width: 150px;
+}
+
 /* 404 Page Styles */
 
 .welcome {
