@@ -76,13 +76,16 @@
 	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
 	            <?php endif; ?>
 
-	     <ul>
 
-	    <?php foreach ($errors as $error){ ?>
+	    <?php   if(!empty($errors)){?>
+	     			<ul class = "alert alert-danger">
+
+	    		<?php foreach ($errors as $error){ ?>
  		
- 				<li><?php echo $error .PHP_EOL;} ?></li>
+ 					<li style="list-style-type:none"><?php echo $error .PHP_EOL;} ?></li>
  		
- 		</ul>
+ 					</ul>
+ 		<?php } ?>
 
 				<form method="POST" action="" data-validation data-required-message="This field is required">
 				<h4> <?= $message ?> </h4>
