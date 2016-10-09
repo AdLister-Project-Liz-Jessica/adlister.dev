@@ -102,6 +102,15 @@ h3 > a {
     width: 150px;
 }
 
+/* show page image style */
+.show-item-img {
+    height: 275px;
+    width: 350px;
+}
+
+.imageHolder {
+    text-align: center;
+}
 /* 404 Page Styles */
 
 .welcome {

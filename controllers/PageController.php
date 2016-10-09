@@ -8,6 +8,9 @@ function pageController()
     // defines array to be returned and extracted for view
     $data = [];
 
+    // define var product id to access correct product on the show page
+    $productId = Input::get('id');
+
     // finds position for ? in url so we can look at the url minus the get variables
     $get_pos = strpos($_SERVER['REQUEST_URI'], '?');
 
@@ -54,6 +57,7 @@ function pageController()
             break;
         case '/ads/show':
             $main_view = '../views/ads/show.php';
+            $data['products'] = Product::find($productId);
             break;
         //the following edit page is not doing much yet, we will find out in the future what it's for..I hope
         case '/users/edit':

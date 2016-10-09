@@ -24,6 +24,10 @@ class Product extends Model
         return $features;
     }
 
+    public function getUserInfo () {
+
+        return User::find($this->user_id);
+    }
 
 }
 
