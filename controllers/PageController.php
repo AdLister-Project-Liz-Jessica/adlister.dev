@@ -8,6 +8,9 @@ function pageController()
     // defines array to be returned and extracted for view
     $data = [];
 
+    // define var product id to access correct product on the show page
+    $productId = Input::get('id');
+
     // finds position for ? in url so we can look at the url minus the get variables
     $get_pos = strpos($_SERVER['REQUEST_URI'], '?');
 
@@ -28,6 +31,7 @@ function pageController()
     switch ($request) {
         case '/':
             $main_view = '../views/home.php';
+            $data['features'] = Product::features();
             break;
         case '/users/profile':
             $main_view = '../views/users/account.php';
@@ -49,9 +53,11 @@ function pageController()
             break;
         case '/ads/index':
             $main_view = '../views/ads/index.php';
+            $data['products'] = Product::all();
             break;
         case '/ads/show':
             $main_view = '../views/ads/show.php';
+            $data['products'] = Product::find($productId);
             break;
         //the following edit page is not doing much yet, we will find out in the future what it's for..I hope
         case '/users/edit':
@@ -64,7 +70,6 @@ function pageController()
     }
 
     $data['main_view'] = $main_view;
-    $data['features'] = Product::features();
 
 
     return $data;
