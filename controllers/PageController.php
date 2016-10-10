@@ -48,10 +48,16 @@ function pageController()
             break;
         case '/ads/create':
             $main_view = '../views/ads/create.php';
+            if (!empty($_POST)) {
+                saveTheProduct();
+            }
             break;
-        case '/ads/edit':
-            $main_view = '../views/ads/edit.php';
-            break;
+        // case '/ads/edit':
+        //     $main_view = '../views/ads/edit.php';
+        //     if (!empty($_POST)) {
+        //         saveTheProduct();
+        //     }
+        //     break;
         case '/ads/index':
             $main_view = '../views/ads/index.php';
             $data['products'] = Product::all();
