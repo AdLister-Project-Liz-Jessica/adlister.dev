@@ -1,10 +1,12 @@
 <!--Page for single advertisement -->
 <div class="container">
 
+
 <?php foreach ($products as $product) : ?>
 
-    <div class="show col-sm-8">
+    <div class="col-sm-8">
 
+    <section>
         <div class="imageHolder">
 
             <img class="show-item-img" src="<?= $product['image_url'] ?>">
@@ -15,9 +17,13 @@
 
         <p><?= $product ['description'] ?></p>
 
+    </section>
     </div>
 
+
+
     <div class="col-sm-4">
+    <section>
 
         <p><span class="bold">Price:</span> $ <?= $product ['price'] ?></p>
         
@@ -32,6 +38,7 @@
             <button class="btn">delete ad</button>
         
         </div> -->
+    </section>
 
     </div>
 
@@ -43,5 +50,6 @@
 } ?>
 
 <?php endforeach ?>
+
 
 </div>
