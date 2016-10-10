@@ -9,9 +9,10 @@
 html,
 body {
     height: 100%;
-    background-image: url("/../img/bluestripebg.jpg");
-    background-size: repeat;
+    background-image: url("/../img/bgfruits.jpeg");
+    background-size: cover;
     font-family: 'Cormorant Upright', serif;
+    color: #CC043D;
 }
 
 body {
@@ -140,7 +141,7 @@ h3 > a {
 }
 /*profile styling*/
 section{
-    background: rgba(114, 153, 138, .7);
+    background: rgba(114, 153, 138, .9);
     border-radius: 10px;
     text-align: left;
     padding: 15px 25px;
