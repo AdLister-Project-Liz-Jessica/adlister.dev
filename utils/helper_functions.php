@@ -78,7 +78,7 @@ function saveTheProduct()
         $newProduct->product_name = $product_name;
         $newProduct->price = $price;
         $newProduct->description = $description;
-        $newProduct->image_url = $image_url;
+        $newProduct->image_url = saveUploadedImage('image_url');
 
         $newProduct->save();
 
