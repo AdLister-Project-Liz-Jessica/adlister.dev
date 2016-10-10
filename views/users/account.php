@@ -1,29 +1,43 @@
 <!--Page for user account home-->
 <?php 
 
-    if(!Auth::check()){
-        header("Location: /users/login");
-    }
+if(!Auth::check()){
+    header("Location: /users/login");
+    die;
+}
 
-    $currentUser = Auth::user();
+$currentUser = Auth::user();
 
 
- ?>
+?>
 <div class="container">
-	<section id="userInfo">
-		<div class="row">
 
-			<h2 class="text-center">User Info</h2>
-			<p class="text-center">Name: <?php echo $currentUser->name; ?></p>
-			<p class="text-center">Username: <?php echo $currentUser->username; ?> </p>
-			<p class="text-center">Email: <?php echo $currentUser->email; ?></p>
+    <section id="userInfo">
 
-		
-				<div class="col-sm-12 text-center">
-		    		<a href="/users/account/edit?id=1" class="btn btn-primary"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Profile</a>
-		    	</div>
-		</div>
-	</section>
+        <div class="row">
+
+            <h2 class="text-center">User Info</h2>
+
+            <p class="text-center">Name: <?php echo $currentUser->name; ?></p>
+
+            <p class="text-center">Username: <?php echo $currentUser->username; ?> </p>
+
+            <p class="text-center">Email: <?php echo $currentUser->email; ?></p>
+
+
+            <div class="col-sm-12 text-center">
+
+                <a href="/users/account/edit?id=1" class="btn btn-primary">
+
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Profile
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <section id="for-sale">
 
@@ -35,68 +49,32 @@
 
             </div>
 
-
         </div>
+
         <div class="row">
 
-             <div class="col-sm-4">
+            <div class="col-sm-4">
 
-                <h5 class="text-center">Lorem Ipsum</h4>
+                <?php foreach ($users_ads as $users_ad) : ?>
 
-                <img src="http://placekitten.com/200/200" class="img-responsive center-block">
+                    <h5 class="text-center"><?= $users_ad['product_name'] ?></h4>
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi utcommodo
-                    consequat. Duis aute irure dolor in reprehenderivelit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteurcupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.               
-                </p>
-                <p>
-                	<!-- From Oolister Sample -->
-                   <!--  <a href="/items/show?id=2">See More</a> -->
-                    <a href="http://placekitten.com/250/200">See More</a>
-                </p>
+                    <img src="<?= $users_ad['image_url'] ?>" class="features center-block">
 
-            </div>
-                         <div class="col-sm-4">
+                    <p><?= $users_ad['description'] ?></p>
 
-                <h5 class="text-center">Lorem Ipsum</h4>
-
-                <img src="http://placekitten.com/200/200" class="img-responsive center-block">
-
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi utcommodo
-                    consequat. Duis aute irure dolor in reprehenderivelit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteurcupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.               
-                </p>
+                <?php endforeach ?>
 
             </div>
 
-                         <div class="col-sm-4">
+        </div>
 
-                <h5 class="text-center">Lorem Ipsum</h4>
+        <div class="row text-center">
 
-                <img src="http://placekitten.com/200/200" class="img-responsive center-block">
+            <a href="/items/create" class="btn btn-success">Create Ad</a>
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi utcommodo
-                    consequat. Duis aute irure dolor in reprehenderivelit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteurcupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.               
-                </p>
+        </div>
 
-            </div>
-                               </div>
-                    <div class="row text-center">
-                <a href="/items/create" class="btn btn-success">Create Ad</a>
-            </div>
-        
     </section>
+
 </div>
