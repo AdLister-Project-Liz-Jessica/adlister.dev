@@ -57,13 +57,15 @@ $currentUser = Auth::user();
 
                 <?php foreach ($users_ads as $users_ad) : ?>
 
-                    <h5 class="text-center"><?= $users_ad['product_name'] ?></h4>
+                <h5 class="text-center"><?= $users_ad['product_name'] ?></h4>
 
-                    <img src="<?= $users_ad['image_url'] ?>" class="features center-block">
+                <img src="<?= $users_ad['image_url'] ?>" class="features center-block">
 
-                    <p><?= $users_ad['description'] ?></p>
+                <p><?= $users_ad['description'] ?></p>
 
                 <?php endforeach ?>
+
+                <!-- <a href="/ads/edit" class="text-center">Edit this listing</a> -->
 
             </div>
 
