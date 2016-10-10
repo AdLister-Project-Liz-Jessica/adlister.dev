@@ -71,7 +71,7 @@ $currentUser = Auth::user();
 
         <div class="row text-center">
 
-            <a href="/items/create" class="btn btn-success">Create Ad</a>
+            <a href="/ads/create" class="btn btn-success">Create Ad</a>
 
         </div>
 
