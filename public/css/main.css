@@ -9,8 +9,9 @@
 html,
 body {
     height: 100%;
-    /*background-image: url("../img/cupcakes.jpg");*/
-    background-size: cover;
+    background-image: url("/../img/bluestripebg.jpg");
+    background-size: repeat;
+    font-family: 'Cormorant Upright', serif;
 }
 
 body {
@@ -43,11 +44,7 @@ body {
     max-height: 340px;
     background-color: #72998A;
 }
-.portfolio-item {
-    margin-bottom: 30px;
 
-
-}
 
 
 /*Body Styles*/
@@ -143,7 +140,7 @@ h3 > a {
 }
 /*profile styling*/
 section{
-    background: rgba(206,240,255,.6);
+    background: rgba(114, 153, 138, .7);
     border-radius: 10px;
     text-align: left;
     padding: 15px 25px;
@@ -154,6 +151,7 @@ section{
 
 footer {
     margin: 0 25px;
+    color: white;
 }
 
 /* Responsive Styles */

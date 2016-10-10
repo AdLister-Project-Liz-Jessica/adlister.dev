@@ -12,16 +12,16 @@
 
 				<p>Please fill out the information below to edit a product item</p>
 
-				<form method="POST" action="" data-validation data-required-message="This field is required">
+				<form method="POST" action="/ads/edit" data-validation data-required-message="This field is required">
 
 					<div class="form-group">
-					    <input type="text" class="form-control" id="item_name" name="item_name" placeholder="Item Name" data-required>
+					    <input type="text" class="form-control" id="item_name" name="product_name" placeholder="Item Name" data-required>
 					</div>
 					<div class="form-group">
-					    <input type="text" class="form-control" id="item_price" name="item_price" placeholder="Item Price $" data-required>
+					    <input type="text" class="form-control" id="item_price" name="price" placeholder="Item Price $" data-required>
 					</div>
 					<div class="form-group">
-    					<textarea class="form-control" id="item_description" rows="3" placeholder="Description of item"></textarea>
+    					<textarea class="form-control" id="description" rows="3" placeholder="Description of item"></textarea>
   					</div>
 					<div class="row">
 						<div class="col-sm-6">

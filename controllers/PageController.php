@@ -35,6 +35,7 @@ function pageController()
             break;
         case '/users/profile':
             $main_view = '../views/users/account.php';
+            $data['users_ads'] = Product::findAllAdsFromThisUser(Auth::id());
             break;
         case '/users/signup': 
             $main_view = '../views/users/signup.php';
@@ -47,10 +48,16 @@ function pageController()
             break;
         case '/ads/create':
             $main_view = '../views/ads/create.php';
+            if (!empty($_POST)) {
+                saveTheProduct();
+            }
             break;
-        case '/ads/edit':
-            $main_view = '../views/ads/edit.php';
-            break;
+        // case '/ads/edit':
+        //     $main_view = '../views/ads/edit.php';
+        //     if (!empty($_POST)) {
+        //         saveTheProduct();
+        //     }
+        //     break;
         case '/ads/index':
             $main_view = '../views/ads/index.php';
             $data['products'] = Product::all();

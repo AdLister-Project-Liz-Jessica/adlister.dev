@@ -54,3 +54,35 @@ function saveUploadedImage($input_name)
         return null;
     }
 }
+
+function saveTheProduct()
+{
+    // if user is logged in
+    if (Auth::check()) {
+
+        // assign the user id
+        $user_id = Auth::id();        
+            
+        //validate uploaded file & save file name in variable
+        $input_name = Input::getImage('image_url');
+        $image_url = saveUploadedImage($input_name['name']);
+
+        // set the info from post requests to variables
+        $product_name = Input::get('product_name');
+        $price = Input::get('price');
+        $description = Input::get('description');
+
+        // create new instance of product
+        $newProduct = new Product();
+        $newProduct->user_id = $user_id;
+        $newProduct->product_name = $product_name;
+        $newProduct->price = $price;
+        $newProduct->description = $description;
+        $newProduct->image_url = saveUploadedImage('image_url');
+
+        $newProduct->save();
+
+
+    } 
+
+}

@@ -1,52 +1,4 @@
 <!--Page for creating new advertisement listings-->
-<?php
-
-// if user is logged in
-if (Auth::check()) {
-
-    $user_id = Auth::id();
-    
-    //check if all inputs are filled out
-    if (Input::has('product_name') && Input::has('price') && Input::has('description')) {
-        
-        //validate uploaded file & save file name in variable
-        $input_name = Input::getImage('image_file');
-        saveUploadedImage($input_name['name']);
-
-        // set the info from post requests to variables
-        if (! empty($_POST)) {
-
-            $product_name = Input::get('product_name');
-            $price = Input::get('price');
-            $description = Input::get('description');
-
-            $newProduct = new Product();
-            $newProduct->user_id = $user_id;
-            $newProduct->product_name = $product_name;
-            $newProduct->price = $price;
-            $newProduct->description = $description;
-            $newProduct->image_url = saveUpLoadedImage('image_file');
-
-            $newProduct->save();
-
-            $message = "your ad has been successfully created";
-        }
-
-    } else {
-
-        $message = "your ad was not created, try again";
-
-    }
-
-} else {
-
-    $message = "you must be logged in to create an ad, log in first then try again";
-
-}
-
-
-?>
-
 
 <div class="container">
 
@@ -74,8 +26,8 @@ if (Auth::check()) {
 
                     <div class="form-group">
                         <label for="image">Item image</label>
-                        <input type="file" class="form-control-file" id="image_file" name="image_file" enctype="multipart/form-data"  aria-describedby="fileHelp">
-                        <small id="fileHelp" class="form-text text-muted">Add a picture of your Item!</small>
+                        <input type="file" class="form-control-file" id="image_url" name="image_url" enctype="multipart/form-data"  aria-describedby="fileHelp">
+                        <small id="fileHelp" class="form-text text-muted">Add a picture of your Item. Allowed file types are .jpeg, .jpg, .gif, and .png</small>
                     </div>
         <div class="row">
                         <div class="col-sm-6">

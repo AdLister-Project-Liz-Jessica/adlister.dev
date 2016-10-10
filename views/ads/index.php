@@ -6,7 +6,7 @@
 
     <div class="index-head">
 
-        <h1>Shop Kitchen Kingdom!</h1>
+        <h1>Shop Kitchen Kweendom!</h1>
 
     </div>
 
