@@ -35,6 +35,7 @@ function pageController()
             break;
         case '/users/profile':
             $main_view = '../views/users/account.php';
+            $data['users_ads'] = Product::findAllAdsFromThisUser(Auth::id());
             break;
         case '/users/signup': 
             $main_view = '../views/users/signup.php';
