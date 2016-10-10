@@ -111,6 +111,10 @@ h3 > a {
 .imageHolder {
     text-align: center;
 }
+
+#buttonHolder {
+    display: none;
+}
 /* 404 Page Styles */
 
 .welcome {
