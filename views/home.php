@@ -8,7 +8,7 @@
 
                 <div class="jumbotron">
 
-                    <h1>Welcome to Kitchen Kingdom!</h1>
+                    <h1>Welcome to Kitchen Kweendom!</h1>
 
                     <p>Your source for all the unique kitchen gadgets you never knew you needed</p>
 
