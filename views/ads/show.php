@@ -25,13 +25,13 @@
 
         <p><span class="bold">Posted By:</span> <?= $products->getUserInfo()->name ?></p>
 
-        <div id="buttonHolder" class="button-center">
+        <!-- <div id="buttonHolder" class="button-center">
 
             <button class="btn">edit ad</button>
 
             <button class="btn">delete ad</button>
         
-        </div>
+        </div> -->
 
     </div>
 
